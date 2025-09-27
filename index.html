@@ -1,98 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Invoice</title>
+    <title>Address Form</title>
 </head>
 <body>
 
-    <h1>Invoice</h1>
+    <h1>Shipping Address</h1>
 
-    <table border="1" cellpadding="5" cellspacing="0" width="100%">
-        <tbody>
-            <tr>
-                <!-- Invoice details -->
-                <td>
-                    <strong>Invoice #</strong>: INV-2025-001<br>
-                    <strong>Invoice Date</strong>: September 17, 2025<br>
-                    <strong>Due Date</strong>: October 17, 2025
-                </td>
-                
-                <!-- Billed To -->
-                <td>
-                    <strong>Billed To:</strong><br>
-                    John Doe<br>
-                    123 Main Street<br>
-                    Anytown, USA 12345
-                </td>
-                
-                <!-- From -->
-                <td>
-                    <strong>From:</strong><br>
-                    Your Company, Inc.<br>
-                    456 Business Road<br>
-                    Business City, USA 54321
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <form action="/submit-address" method="post">
 
-    <hr>
+        <!-- Full Name -->
+        <label for="full-name">Full Name:</label><br>
+        <input type="text" id="full-name" name="full_name" required><br><br>
 
-    <h3>Items</h3>
+        <!-- Street Address Line 1 -->
+        <label for="address-1">Street Address:</label><br>
+        <input type="text" id="address-1" name="address_1" required><br><br>
 
-    <table border="1" cellpadding="5" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>Description</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Product A</td>
-                <td>2</td>
-                <td>$50.00</td>
-                <td>$100.00</td>
-            </tr>
-            <tr>
-                <td>Service B</td>
-                <td>1</td>
-                <td>$150.00</td>
-                <td>$150.00</td>
-            </tr>
-            <tr>
-                <td>Product C</td>
-                <td>5</td>
-                <td>$10.00</td>
-                <td>$50.00</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <!-- colspan="3" merges the three columns to the left of the total -->
-                <td colspan="3" align="right"><strong>Subtotal:</strong></td>
-                <td>$300.00</td>
-            </tr>
-            <tr>
-                <td colspan="3" align="right"><strong>Tax (8%):</strong></td>
-                <td>$24.00</td>
-            </tr>
-            <tr>
-                <td colspan="3" align="right"><strong>Total:</strong></td>
-                <td>$324.00</td>
-            </tr>
-        </tfoot>
-    </table>
+        <!-- Street Address Line 2 (Optional) -->
+        <label for="address-2">Apartment, Suite, etc. (Optional):</label><br>
+        <input type="text" id="address-2" name="address_2"><br><br>
 
-    <hr>
+        <!-- City -->
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
 
-    <h3>Payment Information</h3>
-    <p>Please make all checks payable to Your Company, Inc.</p>
+        <!-- State/Province/Region -->
+        <label for="state">State/Province/Region:</label><br>
+        <input type="text" id="state" name="state" required><br><br>
 
-    <h3>Terms and Conditions</h3>
-    <p>Payment is due within 30 days of the invoice date. Late payments may incur a penalty.</p>
+        <!-- ZIP/Postal Code -->
+        <label for="zip">ZIP / Postal Code:</label><br>
+        <input type="text" id="zip" name="zip" required><br><br>
+
+        <!-- Country -->
+        <label for="country">Country:</label><br>
+        <select id="country" name="country" required>
+            <option value="">--Select a country--</option>
+            <option value="usa">United States</option>
+            <option value="can">Canada</option>
+            <option value="gbr">United Kingdom</option>
+            <option value="deu">Germany</option>
+        </select><br><br>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Address">
+
+    </form>
 
 </body>
 </html>
